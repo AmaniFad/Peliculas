@@ -1,20 +1,19 @@
 package com.example.retrofitpeliculas
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.retrofitpeliculas.databinding.FilmDataLayoutBinding
 
 class MoveData  : AppCompatActivity() {
-    private lateinit var binding: FilmDataLayoutBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FilmDataLayoutBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.film_data_layout)
+        val btnBack: Button = findViewById(R.id.backButton)
 
-        val synopsis = intent.getStringExtra("synopsis")
-        binding.synopsisData.text = synopsis
-
-        binding.backButton.setOnClickListener { finish() }
+        val script = intent.getStringExtra("script")
+        val tvScript: TextView = findViewById(R.id.synopsisData)
+        tvScript.text = script
+        btnBack.setOnClickListener{finish()}
     }
 }

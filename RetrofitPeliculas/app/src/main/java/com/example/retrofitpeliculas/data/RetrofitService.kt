@@ -17,8 +17,8 @@ interface RetrofitService {
 object RetrofitServiceFacroty{
     fun makeRetrofitService(): RetrofitService{
         return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build().create(RetrofitService::class.java)
+        .baseUrl("https://api.themoviedb.org/3/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build().create(RetrofitService::class.java)
     }
 }
